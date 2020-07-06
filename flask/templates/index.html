@@ -1,0 +1,128 @@
+<html>
+ 
+<head> 
+
+ 
+<title>Price Prediction</title> 
+ 
+<style> 
+body{ 
+margin: 0; 
+padding: 0; 
+font-family: sans-serif; 
+background-color: #3c3c3c; 
+color: white;
+} 
+ 
+.bg{ 
+ 
+height: 100%; 
+ 
+background-position: center; 
+ 
+} 
+
+header {
+  background-color: #191919;
+  padding: 2px;
+  text-align: center;
+  font-size:30px;
+  color: white;
+  text-transform: uppercase; 
+}
+ 
+.box{ 
+ 
+width: 300px; 
+padding: 40px; 
+position: absolute;  
+top: 0%; 
+left: 50%; 
+ 
+transform: translate(-50%,50%); 
+ background: #191919; 
+text-align: center; 
+ 
+} 
+ 
+.box h3{ 
+color: white; 
+text-transform: uppercase;  
+font-weight: 500; 
+} 
+ 
+.box input[type = "text"],.box input[type = "password"]{ 
+border:0; 
+background: none; 
+display: block; 
+margin: 20px auto; 
+text-align: center; 
+border: 2px solid #3498db; 
+padding: 14px 10px; 
+width: 200px; 
+outline: none; 
+color: white; 
+border-radius: 24px; 
+transition: 0.25s; 
+} 
+ 
+.box input[type = "text"]:focus,.box input[type = "password"]:focus
+{ width: 280px; 
+border-color: #2ecc71; 
+ 
+} 
+ 
+.box input[type = "submit"]
+{ border:0; 
+background: none; 
+display: block; 
+margin: 20px auto; 
+textalign: center; 
+border: 2px solid #2ecc71; 
+padding: 14px 40px; 
+outline: none; 
+color: white; 
+border-radius: 24px; 
+transition: 0.25s; 
+cursor: pointer; 
+} 
+ 
+.box input[type = "submit"]:hover{ 
+background: #2ecc71; 
+} 
+label{
+color: grey;
+}
+ 
+</style> 
+ 
+</head> 
+ 
+<body> 
+ <header>
+  <h2>Coal Price Prediction</h2>
+</header>
+<form class="box" action="http://localhost:5000/login" method="post">
+    <h3>Enter the values</h3> 
+   	<h1><input type="text" name="moisture" placeholder="Moisture"></h1>
+    <h1><input type="text" name="volatile_nature" placeholder="Volatile_nature"></h1>
+    <h1><input type="text" name="alkalines" placeholder="Alkaline"></h1>
+    <label for = "states">Choose your State</label>
+	<select name="state">
+		  <option value="California">California</option>
+		  <option value="Florida">Florida</option>
+		  <option value="NewYork">NewYork</option>
+		</select>
+    
+    <p><input type="submit" value="submit"></p>
+    <br>
+    <br>
+    {{prediction_text}}
+    </form>
+<br><br>
+  
+
+ 
+</body> 
+ 
+</html> 
